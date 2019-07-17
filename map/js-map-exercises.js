@@ -66,12 +66,13 @@ Instructions:
  * 
  * Result:
  * [4, 10, 200]
-*/
+ */
 function doubleNumbers(arr) {
   // your code here
-
+  var output = arr.map(element => element * 2);
+  return output;
 }
-
+console.log(doubleNumbers([1, -2, 3]))
 /*
  * Exercise 2 : 
  * 
@@ -83,13 +84,15 @@ function doubleNumbers(arr) {
  * 
  * Result:
  * ["2", "5", "100"]
-*/
+ */
 
 function stringItUp(arr) {
   // your code here
-
+  var output = arr.map(element => element + "")
+  return output;
 
 }
+console.log(stringItUp([1, 2, 3]))
 
 
 /*
@@ -103,12 +106,17 @@ function stringItUp(arr) {
  * 
  * Result:
  *  ["John", "Jacob", "Jingleheimer", "Schmidt"]
-*/
+ */
 
 function capitalizeNames(arr) {
   // your code here
-
+  var result = arr.map(element =>
+    //  
+    element[0].toUpperCase() + element.slice(1).toLowerCase()
+  )
+  return result;
 }
+console.log(capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"]));
 
 /*
  * Exercise 4:  
@@ -142,11 +150,23 @@ function capitalizeNames(arr) {
  * 
  * Result:
  *  ["Angelina Jolie", "Eric Jones", "Paris Hilton", "Kayne West", "Bob Ziroll"]
-*/
+ */
+var array = [{
+  name: "Omaima",
+  age: 16
+}, {
+  name: "Mohamad",
+  age: 20
+}, {
+  name: "DOHA",
+  age: 18
+}]
 
 function namesOnly(arr) {
   // your code here
+  return arr.map(element => element.name)
 }
+console.log(namesOnly(array))
 /*
  * Exercise 5:  
  * 
@@ -189,7 +209,14 @@ function namesOnly(arr) {
 
 function makeStrings(arr) {
   // your code here
+  return arr.map(index => {
+    if (index.age >= 18) {
+      return index.name + "" + " can go to the matrix"
+    }
+    return index.name + "" + " is under age!!!!!"
+  })
 }
+console.log(makeStrings(array))
 
 /*
  * Exercise 6:  
@@ -231,72 +258,82 @@ function makeStrings(arr) {
  */
 
 function readyToPutInTheDOM(arr) {
+
   // your code here
+  return arr.map(index => "<h1>"+index.name+"</h1>" + "<h2>"+index.age+"</h2>" )
 }
 
+console.log(readyToPutInTheDOM(array))
 
 
 
 /*
-* Exercise 7:
-* Write a function called doubleValues which accepts an array and returns a new array with all the values in the array passed to the function doubled
-*
-* Test Cases:
-*   Test Case 1:  doubleValues([1,2,3]) 
-*   Test Case 2:  doubleValues([1,-2,-3])  
-*
-* Result:
-* Test Case 1: [2,4,6] 
-* Test Case 2: [2,-4,-6]
-*/
+ * Exercise 7:
+ * Write a function called doubleValues which accepts an array and returns a new array with all the values in the array passed to the function doubled
+ *
+ * Test Cases:
+ *   Test Case 1:  doubleValues([1,2,3]) 
+ *   Test Case 2:  doubleValues([1,-2,-3])  
+ *
+ * Result:
+ * Test Case 1: [2,4,6] 
+ * Test Case 2: [2,-4,-6]
+ */
 
 function doubleValues(arr) {
   // your code here
 }
 
 /*
-* Exercise 8:
-* Write a function called valTimesIndex which accepts an array and returns a new array with each value multiplied by the index it is currently at in the array.
-*
-*
-* Test Cases :
-*   Test Case 1:  valTimesIndex([1,2,3])  
-*   Test Case 2:  valTimesIndex([1,-2,-3]) 
-* 
-* Result
-* Test Case 1: [0,2,6]
-* Test Case 2: [0,-2,-6]
-*/
+ * Exercise 8:
+ * Write a function called valTimesIndex which accepts an array and returns a new array with each value multiplied by the index it is currently at in the array.
+ *
+ *
+ * Test Cases :
+ *   Test Case 1:  valTimesIndex([1,2,3])  
+ *   Test Case 2:  valTimesIndex([1,-2,-3]) 
+ * 
+ * Result
+ * Test Case 1: [0,2,6]
+ * Test Case 2: [0,-2,-6]
+ */
 
 function valTimesIndex(arr) {
   // your code here   
+  return  arr.map((elm ,i)=> elm*i)
 
 }
+console.log(valTimesIndex([1,2,6]))
+
 
 /*
-* Exercise 9:
-* Write a function called extractKey which accepts an array of objects and some key and returns a new array with the value
-* of that key in each object.
-* 
-* Test Case:
-* extractKey([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}], 'name') 
-* 
-* Result:
-* ['Elie', 'Tim', 'Matt', 'Colt']
-*/
+ * Exercise 9:
+ * Write a function called extractKey which accepts an array of objects and some key and returns a new array with the value
+ * of that key in each object.
+ * 
+ * Test Case:
+ * extractKey([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}], 'name') 
+ * 
+ * Result:
+ * ['Elie', 'Tim', 'Matt', 'Colt']
+ */
 
 function extractKey(arr, key) {
   // your code here 
+  return arr.map(elm => (elm[key]));
 }
-
+console.log(extractKey([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}], 'name'))
 /*
-* Exercise 10:
-* Write a function called extractFullName which accepts an array of objects and returns a new array with the value of the key with a name of "first" and the value of a key with the name of  "last" in each object, concatenated together with a space. 
-* 
-* Examples:
-* extractFullName([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]) // ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']
-*/
+ * Exercise 10:
+ * Write a function called extractFullName which accepts an array of objects and returns a new array with the value of the key with a name of "first" and the value of a key with the name of  "last" in each object, concatenated together with a space. 
+ * 
+ * Examples:
+ * extractFullName([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]) // ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']
+ */
 
-function extractFullName() {
+function extractFullName(arr ) {
   // your code here 
+  
+  return arr.map(elm => elm['first']+' '+elm['last'])
 }
+console.log(extractKey([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]))
