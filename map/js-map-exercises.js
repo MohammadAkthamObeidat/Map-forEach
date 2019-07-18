@@ -334,6 +334,6 @@ console.log(extractKey([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'C
 function extractFullName(arr ) {
   // your code here 
   
-  return arr.map(elm => elm['first']+' '+elm['last'])
+  return arr.map(elm => elm.first+' '+elm.last)
 }
 console.log(extractKey([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]))

@@ -14,11 +14,11 @@
  */
 function doubleValues(arr) {
   //Your Code Here
-  var number=[];
-  arr.forEach(element =>number.push(element*2));
+  var number = [];
+  arr.forEach(element => number.push(element * 2));
   return number;
 }
-console.log(doubleValues([1,2,3]));
+console.log(doubleValues([1, 2, 3]));
 
 
 /*
@@ -35,9 +35,15 @@ console.log(doubleValues([1,2,3]));
  */
 function onlyEvenValues(arr) {
   //Your Code Here
-
+  var number = [];
+  arr.forEach(element => {
+    if (element % 2 === 0) {
+      number.push(element);
+    }
+  })
+  return number;
 }
-
+console.log(onlyEvenValues([5, 1, 2, 3, 10]))
 /*
  * Exercise 3:
  * Write a function called showFirstAndLast which accepts an array of strings and returns a new array with only the first and last character of each string.
@@ -53,7 +59,13 @@ function onlyEvenValues(arr) {
  */
 function showFirstAndLast(arr) {
   //Your Code Here
+  var newArr = []
+  arr.forEach(index => {
+    newArr.push(index[0] + index[(index.length - 1)])
+  })
+  return newArr
 }
+console.log(showFirstAndLast(['colt', 'matt', 'tim', 'udemy']))
 
 /*
  * Exercise 4:
@@ -67,9 +79,24 @@ function showFirstAndLast(arr) {
  *   [{name: 'Elie', title:'instructor'}, {name: 'Tim', title:'instructor'}, {name: 'Matt', title:'instructor'}, {name: 'Colt', title:'instructor'}]
  *
  */
+
 function addKeyAndValue(arr, key, value) {
   //Your Code Here
+  arr.forEach(element => element[key]=value)
+
+  return arr;
 }
+
+
+console.log(addKeyAndValue([{
+  Hello: 'Elie'
+}, {
+  name: 'Tim'
+}, {
+  name: 'Matt'
+}, {
+  name: 'Colt'
+}], 'title', 'instructor'))
 
 /*
  * Exercise 5:
