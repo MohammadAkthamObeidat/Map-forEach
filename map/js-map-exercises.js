@@ -331,9 +331,11 @@ console.log(extractKey([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'C
  * extractFullName([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]) // ['Elie Schoppik', 'Tim Garcia', 'Matt Lane', 'Colt Steele']
  */
 
-function extractFullName(arr ) {
-  // your code here 
-  
-  return arr.map(elm => elm.first+' '+elm.last)
+function extractFullName(arr) {
+
+  var result = arr.map(elm => (elm["first"]+" "+elm["last"]));   
+  return result;
 }
-console.log(extractKey([{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]))
+console.log(extractFullName(
+  [{first: 'Elie', last:"Schoppik"}, {first: 'Tim', last:"Garcia"}, {first: 'Matt', last:"Lane"}, {first: 'Colt', last:"Steele"}]
+))

@@ -105,7 +105,7 @@ console.log(addKeyAndValue([{
  * 
  * Test Cases 1: vowelCount('Elie') // {e:2,i:1};
  * Test Cases 2:  vowelCount('Tim') // {i:1};
- * Test Cases 3:  vowelCount('Matt') // {a:1})
+ * Test Cases 3:  vowelCount('Matt') // {a:1}
  * Test Cases 4:  vowelCount('hmmm') // {};
  * Test Cases 5:  vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
  *
@@ -113,7 +113,7 @@ console.log(addKeyAndValue([{
  * Result:
  * Test Cases 1: {e:2,i:1};
  * Test Cases 2: {i:1};
- * Test Cases 3: {a:1})
+ * Test Cases 3: {a:1}
  * Test Cases 4: {};
  * Test Cases 5: {i: 1, a: 4, e: 3, o: 3, u: 1};
  *
@@ -121,4 +121,21 @@ console.log(addKeyAndValue([{
 
 function vowelCount(str) {
   //Your Code Here
+  str = str.toLowerCase();
+  str = str.split("");
+  var counter = 0;
+  var obj ={};
+  str.forEach(element => {
+    counter =0;
+    if(element ==='a' || 'o' || 'u' || 'i' || 'e'){
+      str.forEach(compare => {
+        if(element === compare){
+          counter++;
+          obj[element] = counter;
+        }
+      })
+    }
+  })
+return obj;
 }
+console.log(vowelCount('Eliiieouaaouaaou'));
